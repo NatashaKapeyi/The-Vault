@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Castoro&family=Inter&family=Road+Rage&display=swap');
 
 *,
 *::before,
@@ -11,12 +12,15 @@
 }
 
 body{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Castoro', serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Road Rage', sans-serif;
 }
 
 /* navbar logo */
 img[alt='logo']{
     width:5rem;
     aspect-ratio: 1/1;
+   
 }
 
