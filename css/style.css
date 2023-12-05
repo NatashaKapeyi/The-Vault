@@ -15,6 +15,10 @@ body{
     font-family: 'Castoro', serif;
     font-family: 'Inter', sans-serif;
     font-family: 'Road Rage', sans-serif;
+   
+  
+
+ 
 }
 
 /* navbar logo */
@@ -24,3 +28,36 @@ img[alt='logo']{
    
 }
 
+/* product background */
+/* main{
+    background-image: url(https://i.postimg.cc/qq9tcRLk/02fc6f5dd23ce783fc4d4b6b6e500e4d.jpg);
+    background-repeat: no-repeat;
+    background-position: right top;
+    margin: 50px;
+    
+
+    
+    
+    
+} */
+
+/* 1st shoe line 65-66 */
+img[alt='FirstShoe']{
+    width: 600px;
+    height:577.96px;
+    top:-100px ;
+    left: -2px ;
+    transform: rotate(-10.885deg);
+    position: relative;
+    background-color: #E4DDDD;
+    border-radius:536px ;
+  
+}
+ img[alt='LOGO']{
+    width:508px ;
+    height:765px ;
+    bottom: 200px ;
+    /* left:300px ; */
+    position: relative;
+    margin-left: 10rem;
+ }
