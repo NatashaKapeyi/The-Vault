@@ -53,7 +53,7 @@ function displayProducts(){
             `;
         });
     }
-    //displaying spinner
+    //displaying spinner when loading  
     else{
         Dproducts.innerHTML=`<div class="d-flex justify-content-center">
         <div class="spinner-border" role="status">
