@@ -32,7 +32,7 @@ localStorage.setItem('products',JSON.stringify([
     },
    
 ]));
-
+let basket = [];
 // displaying my products
 let Dproducts = document.querySelector('[data-products]')
 
@@ -47,7 +47,7 @@ function displayProducts(){
             <div class="card-body">
               <h5 class="card-title">${product.name}</h5>
               <p class="card-text">${product.amount}</p>
-              <a href="../html/checkout.html" class="btn btn-danger text-black id=CART" onclick="addToCart(${product.id})">ADD TO CART</a>
+              <a class="btn btn-danger text-black id=CART" onclick='addToCart(${JSON.stringify(product)})'>ADD TO CART</a>
             </div>
           </div>
             `;
@@ -82,7 +82,7 @@ searchProducts.addEventListener('keyup',() => {
                 <div class="card-body">
                     <h5 class="card-title text-center">${product.name}</h5>
                     <p class="card-text text-center">${product.amount}</p>
-                    <a href="#" class="btn btn-dark d-flex justify-content-center">Add to Cart</a>
+                    <a href="#" class="btn btn-dark d-flex justify-content-center" onclick='addToCart(${JSON.stringify(product)})'>Add to Cart</a>
                 </div>
             </div>
         `;
@@ -109,17 +109,20 @@ function sortProductsByAmount() {
  
   //add to cart, targeting the id=CART in the cards 
 
-  function addToCart(productsid) {
-    const chosenProduct = products.find((products) => products.id === productsid);
-    let basket = JSON.parse(localStorage.getItem("basket"));
-    if (!basket) {
-      basket = [];
-    } // puts the product to the cart
-    basket.push(chosenProduct);
-    // Update in localStorage
-    localStorage.setItem("basket", JSON.stringify(basket));
-    alert("Product in the basket!");
-
+  function addToCart(item) {
+    // const chosenProduct = products.find((products) => products.id === productsid);
+    // let basket = JSON.parse(localStorage.getItem("basket"));
+    // if (!basket) {
+    //   basket = [];
+    // } // puts the product to the cart
+    // basket.push(chosenProduct);
+    // // Update in localStorage
+    // localStorage.setItem("basket", JSON.stringify(basket));
+    // alert("Product in the basket!");
+    if(item) {
+      basket.push(item)
+      localStorage.setItem("basket", JSON.stringify(basket))
+    }
 
   }  
 
