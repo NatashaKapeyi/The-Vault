@@ -49,7 +49,7 @@ img[alt='FirstShoe']{
     left: -2px ;
     transform: rotate(-10.885deg);
     position: relative;
-    background-color: #E4DDDD;
+    /* background-color: #b95252; */
     border-radius:536px ;
   
 }
@@ -60,4 +60,9 @@ img[alt='FirstShoe']{
     /* left:300px ; */
     position: relative;
     margin-left: 10rem;
+ }
+
+ .card{
+    margin: auto;
+    width: 18rem;
  }
