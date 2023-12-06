@@ -47,7 +47,7 @@ function displayProducts(){
             <div class="card-body">
               <h5 class="card-title">${product.name}</h5>
               <p class="card-text">${product.amount}</p>
-              <a href="../html/checkout.html" class="btn btn-danger text-black">ADD TO CART</a>
+              <a href="../html/checkout.html" class="btn btn-danger text-black id=CART">ADD TO CART</a>
             </div>
           </div>
             `;
@@ -107,7 +107,8 @@ function sortProductsByAmount() {
     displayProducts(Sproducts);
   }
  
-  //add to cart
+  //add to cart, targeting the id=CART in the cards 
+
   
 
 
