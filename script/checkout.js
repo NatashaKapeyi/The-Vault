@@ -8,17 +8,21 @@ let cData = JSON.parse(localStorage.getItem('basket'))
 
 function displaycData() {
     finalSelection.innerHTML = ""
-    cData.forEach(product=>{
+    cData.map(product=>{
         finalSelection.innerHTML += `
-        <thead>
+         <div class= table-responsive>
+        <table class="table table-borderles table-sm table-align-middle">
+  
         <tbody>
         <tr>
-        <th scope="row">1</th>
-        <td class="text-white">${product.name}</td>
-        <td><img src="${product.img}" class="w-25 img-fluid" alt="${product.name}"</td>
-        <td class="text-white">R${product.amount}.00</td>
+        <th scope="">${product.id}</th>
+        <td><img src="${product.img}" class="w-25 img-fluid" alt=""</td>
+        <td class="text-black">${product.name}</td>
+        <td class="text-black">R${product.amount}</td>
         </tr>
-        </thead>
+        <tbody>
+        </table>
+        </div>
         `
     })
 }
