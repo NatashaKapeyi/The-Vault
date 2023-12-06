@@ -9,26 +9,26 @@ localStorage.setItem('products',JSON.stringify([
     {
         "id":1,
         "name":"VANS1",
-        "amount":799,
-        "img":"https://i.postimg.cc/CKTh3f0n/427a2705f57c98e669b66a1c65ba4f01-removebg-preview.png",
+        "amount":"3999",
+        "img":"https://i.postimg.cc/SRW7G9mL/55a0d0209383b4ec0a79469004733bc7-removebg-preview.png",
     },
     {
         "id":1,
-        "name":"VANS2",
-        "amount":799,
-        "img":"https://i.postimg.cc/CKTh3f0n/427a2705f57c98e669b66a1c65ba4f01-removebg-preview.png",
+        "name":"slip",
+        "amount":"899",
+        "img":"https://i.postimg.cc/V6k3pYJb/393d79197d397f0f9e484bb0e4d2f398-removebg-preview.png",
     },
     {
         "id":1,
-        "name":"ANS1",
-        "amount":799,
-        "img":"https://i.postimg.cc/CKTh3f0n/427a2705f57c98e669b66a1c65ba4f01-removebg-preview.png",
+        "name":"pro",
+        "amount":"699",
+        "img":"https://i.postimg.cc/8Pgt0dQ9/9c66c96e3f2bcd210cc14a006510c4bb-removebg-preview.png",
     },
     {
         "id":1,
-        "name":"VANS1",
-        "amount":799,
-        "img":"https://i.postimg.cc/CKTh3f0n/427a2705f57c98e669b66a1c65ba4f01-removebg-preview.png",
+        "name":"skate",
+        "amount":"999",
+        "img":"https://i.postimg.cc/V6k3pYJb/393d79197d397f0f9e484bb0e4d2f398-removebg-preview.png",
     },
    
 ]));
@@ -42,12 +42,12 @@ function displayProducts(){
         // looping through the products in my array
         products.forEach(product=>{
             //adding product to Dproducts
-            Dproducts.innerHTML +=`<div class="card" style="width: 18rem;">
+            Dproducts.innerHTML +=`<div class="card">
             <img src="${product.img}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${product.name}</h5>
               <p class="card-text">${product.amount}</p>
-              <a href="#" class="btn btn-primary">ADD TO CART</a>
+              <a href="../html/checkout.html" class="btn btn-danger text-black">ADD TO CART</a>
             </div>
           </div>
             `;
@@ -55,7 +55,11 @@ function displayProducts(){
     }
     //displaying spinner
     else{
-        Dproducts.innerHTML=``
+        Dproducts.innerHTML=`<div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">wait</span>
+        </div>
+      </div>`
     }
 }
 // calling the function
@@ -84,13 +88,27 @@ searchProducts.addEventListener('keyup',() => {
         `;
     });
 } else {
-    Dproducts.innerHTML = '<h2 class="text-center vh-100 my-5">No matching products found</h2>';
+    Dproducts.innerHTML = '<h2 class="text-center vh-100 my-5">No with that letter products found</h2>';
 }
 } catch (e) {
 alert(e);
 }
 });
 
+//sorting 
+ // Add event listener to the sort button
+  let sButton = document.querySelector("[data-sort-product]");
+  sButton.addEventListener("click", sortProductsByAmount);
+   
+function sortProductsByAmount() {
+    let Sproducts = products.sort((a, b) => {
+      return parseInt(a.amount) - parseInt(b.amount);
+    });
+    displayProducts(Sproducts);
+  }
+ 
+  //add to cart
+  
 
 
 
