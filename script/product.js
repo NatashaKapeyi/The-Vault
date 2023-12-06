@@ -47,7 +47,7 @@ function displayProducts(){
             <div class="card-body">
               <h5 class="card-title">${product.name}</h5>
               <p class="card-text">${product.amount}</p>
-              <a href="../html/checkout.html" class="btn btn-danger text-black id=CART">ADD TO CART</a>
+              <a href="../html/checkout.html" class="btn btn-danger text-black id=CART" onclick="addToCart(${product.id})">ADD TO CART</a>
             </div>
           </div>
             `;
@@ -109,7 +109,19 @@ function sortProductsByAmount() {
  
   //add to cart, targeting the id=CART in the cards 
 
-  
+  function addToCart(productsid) {
+    const chosenProduct = products.find((products) => products.id === productsid);
+    let basket = JSON.parse(localStorage.getItem("basket"));
+    if (!basket) {
+      basket = [];
+    } // puts the product to the cart
+    basket.push(chosenProduct);
+    // Update in localStorage
+    localStorage.setItem("basket", JSON.stringify(basket));
+    alert("Product in the basket!");
+
+
+  }  
 
 
 
