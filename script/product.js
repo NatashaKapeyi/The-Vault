@@ -39,7 +39,10 @@ localStorage.setItem('products',JSON.stringify([
     },
    
 ]));
-let basket = [];
+
+let basket = JSON.parse(localStorage.getItem("basket")) || [];
+
+
 // displaying my products
 let Dproducts = document.querySelector('[data-products]')
 
@@ -133,5 +136,11 @@ function sortProductsByAmount() {
 
   }  
 
+  let confirmPay = document.querySelector('[data-product-pay]')
+  confirmPay.addEventListener('click', alertPay)
+
+  function alertPay(){
+    alert("Thank you for purchase ");
+  }
 
 
