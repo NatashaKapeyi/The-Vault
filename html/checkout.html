@@ -59,14 +59,16 @@
   </nav>
 
   <main class="container vh-100">
+  
     <div class="container">
-      <table class="table table-responsive-md text-center table-hover table-borderless border-bottom w-50">
+      <table class="table table-responsive-md text-end table-hover table-borderless border-bottom w-50">
         <thead>
           <tr>
             <th scope="col" class="text-start ">#</th>
-            <th scope="col">Description</th>
+            <th scope="col" class="text-end">Product images</th>
+            <th scope="col"class="">Name</th>
             <th scope="col">Amount</th>
-            <th scope="col">Quantity</th>
+            <th scope="col" class="text-center ">Quantity</th>
           </tr>
         </thead>
       </table>
@@ -81,6 +83,7 @@
 
     <div class="row-cols-2">
       <button class="btn btn-dark mt-3" data-product-pay>Pay Now</button>
+      <p id="pay"></p>
     </div>
 
     <div class="col col-md" data-product-amount>

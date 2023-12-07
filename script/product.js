@@ -10,7 +10,7 @@ localStorage.setItem('products',JSON.stringify([
         "id":"1",
         "name":"VANS1",
         "amount":"3999",
-        "img":"https://i.postimg.cc/SRW7G9mL/55a0d0209383b4ec0a79469004733bc7-removebg-preview.png",
+        "img":"https://i.postimg.cc/SRW7G9mL/55a0d0209383b4ec0a79469004733bc7-removebg-preview.png",     
     },
     {
         "id":"2",
@@ -136,11 +136,5 @@ function sortProductsByAmount() {
 
   }  
 
-  let confirmPay = document.querySelector('[data-product-pay]')
-  confirmPay.addEventListener('click', alertPay)
-
-  function alertPay(){
-    alert("Thank you for purchase ");
-  }
 
 
