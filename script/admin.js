@@ -43,22 +43,25 @@ displayProducts();
 
 let save=document.querySelector('[product-modal-save]')
 save.addEventListener('click', addProduct)
+
 function addProduct() {
     try{
         let product = {
-            "id": products.map( item => item.id).at(-1) + 1 || 1,
-            "name": document.querySelector('#admin-id${product.id}'),
-            "amount": document.querySelector('#admin-amount${product.id}'),
-            "img": document.querySelector('#admin-image${product.id}')
+            "id": products.map( item => item.id).at(-1)  || 1,
+            "name": document.querySelector('#admin-name').value,
+            "amount": document.querySelector('#admin-amount').value,
+            "img": document.querySelector('#admin-image').value
         }
         products.push(product)
-        localStorage.setItem('products', JSON.stringify('products'))
-        displayProducts(product)
+        localStorage.setItem('products', 
+        JSON.stringify('products'))
+        displayProducts()
     }catch(e) {
 
     }
     
 }
+
 
 let sortB = document.querySelector("[product-admin-sort]");
 sortB.addEventListener("click", sortProductsByPrice);
@@ -69,4 +72,6 @@ function sortProductsByPrice() {
   });
   displayProducts(sortProducts);
 }
+
+
 

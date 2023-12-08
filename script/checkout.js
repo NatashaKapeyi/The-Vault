@@ -30,6 +30,7 @@ function displaycData() {
         </table>
         </div>
         `
+        
     }
 }
 displaycData()
