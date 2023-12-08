@@ -1,25 +1,6 @@
 //admin
 let products = JSON.parse(localStorage.getItem('products')) || []
-
 let adminWrapper = document.querySelector('[product-admin-table]')
-
-function addProduct() {
-    try{
-        let product = {
-            "id": products.map( item => item.id).at(-1) + 1 || 1,
-            "name": document.querySelector('#'),
-            "amount": document.querySelector('#'),
-            "img": document.querySelector('#')
-        }
-        products.push(product)
-
-    }catch(e) {
-
-    }
-    
-}
-
-document.querySelector('[product-modal-save]').addEventListener('click', addProduct)
 
 function displayProducts(){
     adminWrapper.innerHTML=""
@@ -59,3 +40,33 @@ function displayProducts(){
 }
 // calling the function
 displayProducts();
+
+let save=document.querySelector('[product-modal-save]')
+save.addEventListener('click', addProduct)
+function addProduct() {
+    try{
+        let product = {
+            "id": products.map( item => item.id).at(-1) + 1 || 1,
+            "name": document.querySelector('#admin-id${product.id}'),
+            "amount": document.querySelector('#admin-amount${product.id}'),
+            "img": document.querySelector('#admin-image${product.id}')
+        }
+        products.push(product)
+        localStorage.setItem('products', JSON.stringify('products'))
+        displayProducts(product)
+    }catch(e) {
+
+    }
+    
+}
+
+let sortB = document.querySelector("[product-admin-sort]");
+sortB.addEventListener("click", sortProductsByPrice);
+ 
+function sortProductsByPrice() {
+  let sortProducts = products.sort((a, b) => {
+    return parseInt(a.amount) - parseInt(b.amount);
+  });
+  displayProducts(sortProducts);
+}
+

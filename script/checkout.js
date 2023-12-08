@@ -70,7 +70,7 @@ confirmPay.addEventListener('click', alertPay)
 function alertPay(){
   let message = "Click OK for a purchase/ Click No for cancelling purchase";
 if (confirm(message) == true) {
-  message= "Thank you for your purchase❤️";
+  message= "";
 } else {
   message= "You canceled your purchase😔 , try again😁";
 }
