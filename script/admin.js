@@ -1,5 +1,6 @@
 //admin
 let products = JSON.parse(localStorage.getItem('products')) || []
+
 let adminWrapper = document.querySelector('[product-admin-table]')
 
 function addProduct() {
