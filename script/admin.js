@@ -54,7 +54,7 @@ function addProduct() {
         }
         products.push(product)
         localStorage.setItem('products', 
-        JSON.stringify('products'))
+        JSON.stringify(products))
         displayProducts()
     }catch(e) {
 
