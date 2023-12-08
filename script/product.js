@@ -8,34 +8,34 @@ let products =JSON.parse(localStorage.getItem('products')) ? JSON.parse(localSto
 localStorage.setItem('products',JSON.stringify([
     {
         "id":"1",
-        "name":"VANS1",
-        "amount":"3999",
-        "img":"https://i.postimg.cc/SRW7G9mL/55a0d0209383b4ec0a79469004733bc7-removebg-preview.png",     
+        "name":"CHECKERBOARD SKATE SLIP-ON",
+        "amount":"999",
+        "img":"https://i.postimg.cc/wTVDgf3V/421925-5088-529124-3-600x-removebg-preview-3.png",     
     },
     {
         "id":"2",
-        "name":"slip",
-        "amount":"899",
-        "img":"https://i.postimg.cc/V6k3pYJb/393d79197d397f0f9e484bb0e4d2f398-removebg-preview.png",
+        "name":"CLASSIC SLIP-ON 98 DX SHOES",
+        "amount":"1399",
+        "img":"https://i.postimg.cc/52ygGdpv/431103-3920-301134-3-600x-removebg-preview-1.png",
     },
     {
         "id":"3",
-        "name":"pro",
-        "amount":"699",
-        "img":"https://i.postimg.cc/8Pgt0dQ9/9c66c96e3f2bcd210cc14a006510c4bb-removebg-preview.png",
+        "name":"HARBOR MULE VR3",
+        "amount":"1799",
+        "img":"https://i.postimg.cc/2SFgxfcD/431877-1323-778134-2-600x-removebg-preview.png",
     },
     {
         "id":"4",
-        "name":"skate",
-        "amount":"999",
-        "img":"https://i.postimg.cc/V6k3pYJb/393d79197d397f0f9e484bb0e4d2f398-removebg-preview.png",
+        "name":"CHECKERBOARD SK8-HI STACKED SHOES",
+        "amount":"1399",
+        "img":"https://i.postimg.cc/mgnvpS3L/429088-6676-880924-2-600x-removebg-preview-2.png",
     },
    
     {
         "id":"5",
-        "name":"skate",
-        "amount":"4",
-        "img":"https://i.postimg.cc/V6k3pYJb/393d79197d397f0f9e484bb0e4d2f398-removebg-preview.png",
+        "name":"Vans Mega Check Knu Skool Skate Shoes",
+        "amount":" 2322",
+        "img":"https://i.postimg.cc/htqHxG0s/s-l1600-removebg-preview.png",
     },
    
 ]));
