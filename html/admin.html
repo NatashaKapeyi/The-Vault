@@ -85,7 +85,11 @@
                 </button>
               </div>
               <div class="modal-body">
-                  <input type="text" id="">
+                 <div class="container">
+                  <input type="text" class="form-control" placeholder="Enter item's #" name="admin-id" id="admin-id${product.id}"required>
+                  <input class="form-control my-2" type="url" placeholder="Enter image url" name="admin-image" id="admin-image${product.id}" required>
+                  <input class="form-control" type="number" placeholder="Enter item amount" value="admin-amount${product.amount}" name="admin-amout" id="admin-amount${product.id}" required>
+                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
