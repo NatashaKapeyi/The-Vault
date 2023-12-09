@@ -46,8 +46,7 @@ let basket = JSON.parse(localStorage.getItem("basket")) || [];
 // displaying my products
 let Dproducts = document.querySelector('[data-products]')
 
-function displayProducts(){
-    Dproducts.innerHTML=""
+function displayProducts(){ try {Dproducts.innerHTML=""
     if (products) {
         // looping through the products in my array
         products.forEach(product=>{
@@ -71,6 +70,11 @@ function displayProducts(){
         </div>
       </div>`
     }
+    
+} catch (error) {
+    
+}
+    
 }
 // calling the function
 displayProducts();
@@ -110,16 +114,27 @@ alert(e);
   let sButton = document.querySelector("[data-sort-product]");
   sButton.addEventListener("click", sortProductsByAmount);
    
-function sortProductsByAmount() {
-    let Sproducts = products.sort((a, b) => {
+function sortProductsByAmount() { try { let Sproducts = products.sort((a, b) => {
       return parseInt(a.amount) - parseInt(b.amount);
     });
     displayProducts(Sproducts);
+    
+} catch (error) {
+    
+}
+   
   }
  
   //add to cart, targeting the id=CART in the cards 
 
-  function addToCart(item) {
+  function addToCart(item) {try {  if(item) {
+      basket.push(item)
+      localStorage.setItem("basket", JSON.stringify(basket))
+    }
+    
+  } catch (error) {
+    
+  }
     // const chosenProduct = products.find((products) => products.id === productsid);
     // let basket = JSON.parse(localStorage.getItem("basket"));
     // if (!basket) {
@@ -129,10 +144,7 @@ function sortProductsByAmount() {
     // // Update in localStorage
     // localStorage.setItem("basket", JSON.stringify(basket));
     // alert("Product in the basket!");
-    if(item) {
-      basket.push(item)
-      localStorage.setItem("basket", JSON.stringify(basket))
-    }
+  
 
   }  
 

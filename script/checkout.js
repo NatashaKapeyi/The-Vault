@@ -8,10 +8,10 @@ let finalSelection = document.querySelector('[data-product-cart]')
 // let cData = JSON.parse(localStorage.getItem('basket'))
      let cData= Object.groupBy( cart, (product) => product.id)
 
-        
+      // amount due
+      let amountD=0;  
 
-function displaycData() {
-    finalSelection.innerHTML = "";
+function displaycData() {  try {finalSelection.innerHTML = "";
     if(cData)
     for( let key in cData){
         finalSelection.innerHTML += `
@@ -30,8 +30,17 @@ function displaycData() {
         </table>
         </div>
         `
-        
+        amountD += +cData[key][0].amount * cData[key].length;
     }
+    
+    document.querySelector("[data-product-amount]").innerHTML = `Amount Due:${amountD}`
+  
+} catch (error) {
+  
+}
+    
+    
+    
 }
 displaycData()
 
@@ -58,24 +67,33 @@ let deleteBtn= document.querySelector("[data-product-delete]")
 deleteBtn.addEventListener("click",removeItem);
 
 
-function removeItem(){
-  let remove = document.querySelector('[data-product-cart]');
+function removeItem(){ try {let remove = document.querySelector('[data-product-cart]');
   remove.remove();
   localStorage.removeItem("basket");
 
+  
+} catch (error) {
+  
 }
+  
+}
+
 //pay btn
 let confirmPay = document.querySelector('[data-product-pay]')
 confirmPay.addEventListener('click', alertPay)
 
-function alertPay(){
-  let message = "Click OK for a purchase/ Click No for cancelling purchase";
+function alertPay(){ try {let message = "Click OK for a purchase/ Click No for cancelling purchase";
 if (confirm(message) == true) {
   message= "";
 } else {
   message= "You canceled your purchase😔 , try again😁";
 }
 document.querySelector('#pay').innerHTML = message;
+  
+} catch (error) {
+  
+}
+  
 
 }
 
